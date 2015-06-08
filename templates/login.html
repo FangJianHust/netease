@@ -1,3 +1,5 @@
+$def with (login_check)
+
 <head>
 
 </head>
@@ -10,18 +12,17 @@
 <h2 align="center">个人主页登录页面</h2>
 
 <form action = "" method = "post" align="center">
-
 	<p>
 	  <label>帐号:</label>
-	  <input type="text" name="user" id="id" value="">
+	  <input type="text" name="user" value="">
 	</p>
-	
 	<p>
 	  <label for="password">密码:</label>
-	  <input type="password" name="password" id="password" value="">
+	  <input type="password" name="passwd" value="">
 	</p>
-	
 	<input type="submit" value = "登录"/>
+	$if login_check == 'True':
+	     <p> <label>用户名或密码错误，请重新登录</label></p>
 
 </form>
 

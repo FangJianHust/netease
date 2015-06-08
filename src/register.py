@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*- 
 
-import os
-
 import web
 
 import db
@@ -18,10 +16,16 @@ class Register(object):
         if data['passwd1'] != data['passwd2']:
             return render.register('True')    #密码不一致
         
+        user = data['user'].encode("UTF-8")
+        db.new_count(user, data['passwd1'])
         web.ctx.session.login = True
-        web.ctx.session.uname = data['user'].encode("UTF-8")
-        db.new_count(data['user'], data['passwd1'])
+        web.ctx.session.uname = user
+        
         up = upload.Upload()
-        up.POST()
+        up.operate()
+    
+        web.ctx.session.photo = db.get_photo(user)
+        
+        raise web.seeother('/information')
  
     

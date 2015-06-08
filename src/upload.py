@@ -16,10 +16,15 @@ class Upload(base):
         pass
 
     def POST(self):
+        self.operate()
+        raise web.seeother('/information')
+    
+    def operate(self):
+        """读取头像并保存，同时更新数据库"""
+        
         data = web.input(photo = {})
-        if 'photo' in data:
-            # 处理上传文件
-            filename = data['photo'].filename
+        filename = data['photo'].filename
+        if filename:
             suffix = os.path.splitext(filename)[1]    #后缀 
             new_photo_name = data['user'] + suffix
             (_, ext) = os.path.splitext(filename)
@@ -31,4 +36,3 @@ class Upload(base):
             uname = web.ctx.session.uname
             db.update_photo(uname, filename)
             
-            raise web.seeother('/information')

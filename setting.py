@@ -16,7 +16,7 @@ debug = True
 # url规则
 urls = (
     '/', 'src.login.Login',
-    '/login', 'src.login.Login',
+    '/login(/quit|/)?', 'src.login.Login',
     '/register', 'src.register.Register',
     '/information', 'src.information.Information',
     '/upload', 'src.upload.Upload',
