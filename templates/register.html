@@ -1,8 +1,17 @@
+$def with (passwd_check)
 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>	
 <form action = "" method = "post" enctype="multipart/form-data" align="center">
-	<p>用  户  名：<input type="text"  name = "user"/> </p>
-	<p>密        码：<input type = "password" name="passwd1"/></p>
-	<p>确认密码：<input type = "password" name="passwd2"/></p>
+	<p>用  户  名：<input type="text"  name = "user" required="required"/> </p>
+	<p>密        码：<input type = "password" name="passwd1" required="required"/></p>
+	<p>确认密码：<input type = "password" name="passwd2" required="required"/></p>
 	<p>上传头像：<input type="file" name="photo"/></p>
 	<p><input type = "submit" value = "注册" /></p>
+	$if passwd_check == 'True':
+	    <p> <label>两次密码不一致，请重新输入</label></p>
 </form>
+</body>
