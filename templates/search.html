@@ -1,0 +1,29 @@
+$def with (name, photo)
+
+<head>
+</head>
+<body>
+<table align="center" width = 480>
+
+<tr width = 480><td>
+<form action="/information" method="get" align="right">
+<input type="submit" value="返回" />
+</form>
+</td></tr>
+
+<tr><td>
+<p align="center"><img src="$photo" width=240 height=320 / ></p>
+</td></tr>
+
+<tr><td>
+<p>
+<form action="" method="post" align="center">
+用户名:
+<input type="text" name = 'user' width=20 height=10 required="required" value="$name"/>
+<input type="submit" value="查询" />
+</form>
+</p>	
+</td></tr>
+</table>
+
+</body>

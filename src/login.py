@@ -7,12 +7,7 @@ from setting import render
 
 class Login(object):
     
-    def GET(self, act='/'):
-        if act == '/quit':
-            web.ctx.session.login = False
-            web.ctx.session.uname = ''
-            web.ctx.session.photo = None
-            
+    def GET(self):
         return render.login('False')
     
     def POST(self):
@@ -27,4 +22,12 @@ class Login(object):
             raise web.seeother('/information')
         else:
             return render.login('True')
+    
+class Quit(object):
+    
+    def GET(self):
+        web.ctx.session.login = False
+        web.ctx.session.uname = ''
+        web.ctx.session.photo = None
+        raise web.seeother('/login')
     
