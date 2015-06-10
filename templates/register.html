@@ -2,62 +2,66 @@ $def with (passwd_check)
 
 <body>	
 
- <div class="col-xs-6 col-md-4"  ></div>
- 
- <div class="col-xs-6 col-md-4" 
-         style="background-color: #dedef8;margin-top: 100px;padding-top: 50px;
-         padding-right: 100px;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+<div class="container">
+	<div class="row" >
+	 <div class="col-xs-6 col-md-4"  ></div>
+	 
+	 <div class="col-xs-6 col-md-4" 
+		 style="background-color: #dedef8;margin-top: 100px;padding-top: 50px;
+		 padding-right: 100px;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
 
-	<form class="form-horizontal" enctype="multipart/form-data" role="form" action = "" method = "post">
-	    <div class="form-group">
-	        <label for="name" class="col-md-4 control-label">用 户 名:</label>
-			<div class="col-md-8">
-			  <input type="text" class="form-control" name="user" value=""
-			      required="required" placeholder="请输入用户名" >
+		<form class="form-horizontal" enctype="multipart/form-data" role="form" action = "" method = "post">
+		    <div class="form-group">
+			<label for="name" class="col-md-4 control-label">用 户 名:</label>
+				<div class="col-md-8">
+				  <input type="text" class="form-control" name="user" value=""
+				      required="required" placeholder="请输入用户名" >
+				</div>
 			</div>
-		</div>
 		
-	    <div class="form-group" >
-	        <label for="pass" class="col-md-4 control-label">密       码:</label>
-			<div class="col-md-8">
-			  <input type="password" name="passwd1" class="form-control" 
-			      required="required" placeholder="请输入密码" >
+		    <div class="form-group" >
+			<label for="pass" class="col-md-4 control-label">密       码:</label>
+				<div class="col-md-8">
+				  <input type="password" name="passwd1" class="form-control" 
+				      required="required" placeholder="请输入密码" >
+				</div>
 			</div>
-		</div>
 		
-	    <div class="form-group" >
-	        <label for="pass" class="col-md-4 control-label">	确认密码:</label>
-			<div class="col-md-8">
-			  <input type="password" name="passwd2" class="form-control" 
-			      required="required" placeholder="请再次输入密码" >
+		    <div class="form-group" >
+			<label for="pass" class="col-md-4 control-label">	确认密码:</label>
+				<div class="col-md-8">
+				  <input type="password" name="passwd2" class="form-control" 
+				      required="required" placeholder="请再次输入密码" >
+				</div>
 			</div>
-		</div>
 		
-	    <div class="form-group" >
-	        <label for="pass" class="col-md-4 control-label">上传头像:</label>
-			<div class="col-md-8">
-			  <input type="file" name="photo" class="form-control" />
+		    <div class="form-group" >
+			<label for="pass" class="col-md-4 control-label">上传头像:</label>
+				<div class="col-md-8">
+				  <input type="file" name="photo" class="form-control" />
+				</div>
 			</div>
-		</div>
 		
-	    <div class="form-group"  > 
-	         <label  class="col-md-8 control-label"></label>
-			<div class="col-md-3">
-			  <input type="submit" class="form-control" value = "提交"> 
+		    <div class="form-group"  > 
+			 <label  class="col-md-8 control-label"></label>
+				<div class="col-md-3">
+				  <input type="submit" class="form-control" value = "提交"> 
+				</div>
 			</div>
-		</div>
 		
-		$if passwd_check == 'True':
-		    <div class="form-group" > 
-		          <label  class="col-md-2 control-label"></label>
-		          <div class="col-md-10">
-				  		<label class="control-label" style="font-size:18px; color: red;">
-				  			两次密码不一致，请重新输入
-				 		</label>
-				  </div>
-			</div>
+			$if passwd_check == 'True':
+			    <div class="form-group" > 
+				  <label  class="col-md-2 control-label"></label>
+				  <div class="col-md-10">
+					  		<label class="text-danger" style="font-size:18px; color: red;">
+					  				两次密码不一致，请重新输入
+					 		</label>
+					  </div>
+				</div>
 			
-	</form>
- </div>
+		</form>
+	 </div>
+	</div>
+</div>
  
 </body>
