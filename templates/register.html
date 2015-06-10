@@ -49,12 +49,19 @@ $def with (passwd_check)
 				</div>
 			</div>
 		
-			$if passwd_check == 'True':
-			    <div class="form-group" > 
-				  <label  class="col-md-2 control-label"></label>
-				  <div class="col-md-10">
+			$if passwd_check == 1:
+			    <div class="form-group" > 				 
+				      <div class="col-md-12" style="padding-left: 60px">
 					  		<label class="text-danger" style="font-size:18px; color: red;">
 					  				两次密码不一致，请重新输入
+					 		</label>
+				     </div>
+				</div>
+			$elif passwd_check == 2:
+			    <div class="form-group" > 
+				       <div class="col-md-12" style="padding-left: 60px">
+					  		<label class="text-danger" style="font-size:18px; color: red;">
+					  				用户名已存在，请重新输入
 					 		</label>
 					  </div>
 				</div>

@@ -24,6 +24,13 @@ def check_account(user_, passwd_):
         return True
     else:
         return False
+    
+def check_user(user_):
+    res = db.select('account', where='user=$user_', vars=locals())
+    if len(res) > 0:
+        return True
+    else:
+        return False
 
 def get_photo(user_):
     try:
