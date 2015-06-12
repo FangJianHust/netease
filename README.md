@@ -7,9 +7,9 @@
 ============
 * 创建好数据库的用户名、密码和数据库名字后，把信息添加到setting.py中.<br/>
 * 执行account.sql脚本文件创建数据库和用户信息表，具体内容为：<br/>
->CREATE DATABASE netease;
->CREATE TABLE `account` 
->>`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+> CREATE DATABASE netease;
+> CREATE TABLE `account` 
+>> `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     >>`user` varchar(20) NOT NULL, 
     >>`passwd` varchar(20) NOT NULL,
     >>`photo` varchar(100),
