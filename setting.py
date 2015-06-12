@@ -16,7 +16,7 @@ database = {
             'user': 'fangjian',
             'passwd': '123456'
             }
-debug = True
+debug = False
 
 # url规则
 urls = (
