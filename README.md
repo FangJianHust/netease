@@ -1,16 +1,16 @@
 功能部分
 ========
-* 用户注册、登录、退出功能<br/>
-* 上传和修改头像的功能<br/>
+* 用户注册、登录、退出功能
+* 上传和修改头像的功能
 * 访问头像API的功能，即根据用户名查询头像
 
 数据库的配置
 ============
-* 创建好数据库的用户名、密码和数据库名字后，把信息添加到setting.py中.<br/>
-* 执行account.sql脚本文件创建数据库和用户信息表，具体内容为：<br/>
+* 创建好数据库的用户名、密码和数据库名字后，把信息添加到setting.py中.
+* 执行account.sql脚本文件创建数据库和用户信息表，具体内容为:
 > CREATE DATABASE netease;
 > CREATE TABLE `account` 
->> `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+> > `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     >>`user` varchar(20) NOT NULL, 
     >>`passwd` varchar(20) NOT NULL,
     >>`photo` varchar(100),
@@ -24,7 +24,7 @@ apache的配置
 ============
 * 编译并按装wsgi模块，然后添加LoadModule wsgi_module modules/mod_wsgi.so；打开Include conf/extra/httpd-vhosts.conf
 * 虚拟主机的配置文件为
-    <VirtualHost *:80><br/>
+<VirtualHost *:80><br/>
     ServerName localhost<br/>
 
     >DocumentRoot "/home/fangjian/workspace/netease"<br/>
