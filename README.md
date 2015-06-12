@@ -2,7 +2,8 @@
 ========
 * 用户注册、登录、退出功能<br/>
 * 上传和修改头像的功能<br/>
-* 访问头像API的功能，即根据用户名查询头像<br/>
+* 访问头像API的功能，即根据用户名查询头像
+
 数据库的配置
 ============
 * 创建好数据库的用户名、密码和数据库名字后，把信息添加到setting.py中.<br/>
@@ -21,8 +22,8 @@
 
 apache的配置
 ============
-    1.编译并按装wsgi模块，然后添加LoadModule wsgi_module modules/mod_wsgi.so；打开Include conf/extra/httpd-vhosts.conf<br/>
-    2.虚拟主机的配置文件为
+* 编译并按装wsgi模块，然后添加LoadModule wsgi_module modules/mod_wsgi.so；打开Include conf/extra/httpd-vhosts.conf
+* 虚拟主机的配置文件为
     <VirtualHost *:80><br/>
     ServerName localhost<br/>
 
@@ -42,7 +43,7 @@ apache的配置
     ></Directory><br/>
     >></VirtualHost><br/>
     其中，DocumentRoot需要根据自己项目的位置加以修改<br/>
-    3.配置好项目所在目录的权限，比如：session目录和upfile目录要具有写的权限，所有的目录要具有执行权限等	
+* 配置好项目所在目录的权限，比如：session目录和upfile目录要具有写的权限，所有的目录要具有执行权限等	
 
 项目安装
 =======
