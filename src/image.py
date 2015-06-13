@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*- 
 
+import os
+
 import web
 
 import db
@@ -33,5 +35,19 @@ class Upload(base):
             # 作为新消息插入数据库
             web.ctx.session.photo = relative_path + new_photo_name   #数据库中存放的是相对路径
             db.update_photo(web.ctx.session.uname, web.ctx.session.photo)
-            
+
+class AccessHandler(base):
+    """ 处理访问用户头像的API """
+    
+    def __init__(self):
+        super(AccessHandler, self).__init__()
+    
+    def GET(self, user):
+        image = db.get_photo(user)
+        for (k, v) in web.ctx.iteritems():
+            if k == 'host':
+                break; 
+        url = 'http://' + v + image
+        return render.about(url)
+
             

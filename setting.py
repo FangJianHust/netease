@@ -10,13 +10,10 @@ curdir = os.path.dirname(__file__)
 relative_path = '/static/upfile/'           #相对路径存入数据库，用于浏览器访问
 upload_dir = curdir + relative_path   #绝对路径用于保存上传的头像
 
-database = {
-            'engine': 'mysql',
-            'db': 'netease',
-            'user': 'fangjian',
-            'passwd': '123456'
-            }
-debug = False
+
+db_path = curdir + '/db.json'     #数据库的配置文件
+
+debug = True
 
 # url规则
 urls = (
@@ -25,8 +22,8 @@ urls = (
     '/quit', 'src.login.Quit',
     '/register', 'src.register.Register',
     '/information', 'src.information.Information',
-    '/upload', 'src.upload.Upload',
-    '/search', 'src.search.Search',
+    '/upload', 'src.image.Upload',
+    '/about/(.+)', 'src.image.AccessHandler',
 )
 
 render = web.template.render(curdir+'/templates/', base='base')

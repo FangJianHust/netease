@@ -10,4 +10,4 @@ class Information(base):
         super(Information, self).__init__()
     
     def GET(self):
-        return render.information(web.ctx.session.photo)
+        return render.information(web.ctx.session.uname, web.ctx.session.photo)

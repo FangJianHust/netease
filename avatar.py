@@ -25,6 +25,6 @@ session = web.session.Session(app, web.session.DiskStore(curdir+'/data/sessions'
 def session_hook():
     web.ctx.session = session     #即可在全局访问session
 app.add_processor(web.loadhook(session_hook))
-application = app.wsgifunc()    #wsgi访问的需要
+application = app.wsgifunc()    #wsgi访问的需要   
 
 

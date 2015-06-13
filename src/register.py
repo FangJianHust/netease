@@ -3,7 +3,7 @@
 import web
 
 import db
-import upload
+import image
 from setting import render
 
 
@@ -39,7 +39,7 @@ class Register(object):
         web.ctx.session.login = True
         web.ctx.session.uname = user
         
-        up = upload.Upload()
+        up = image.Upload()
         up.operate()
     
         web.ctx.session.photo = db.get_photo(user)

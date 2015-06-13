@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*- 
 
+import json
+
 import web 
 
-from setting import database
+from setting import db_path
 
+f = file(db_path)
+database = json.load(f)
+            
 db = web.database(
                   dbn=database['engine'], 
                   db=database['db'], 
