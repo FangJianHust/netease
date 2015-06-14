@@ -23,7 +23,7 @@ urls = (
     '/register', 'src.register.Register',
     '/information', 'src.information.Information',
     '/upload', 'src.image.Upload',
-    '/about/(.+)', 'src.image.AccessHandler',
+    '/image/(.+)', 'src.image.AccessHandler',
 )
 
 render = web.template.render(curdir+'/templates/', base='base')

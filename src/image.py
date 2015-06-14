@@ -49,7 +49,7 @@ class AccessHandler(base):
             if k == 'host':
                 break; 
         absolute_photo = 'http://' + v + image
-        url = 'http://' + v + '/about/' + user
+        url = 'http://' + v + '/image/' + user
         return render.about(url, absolute_photo)    #通过在浏览器输入url，即可访问头像absolute_photo
             
 
