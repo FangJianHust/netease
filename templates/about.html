@@ -1,29 +1,41 @@
-$def with (name, photo)
+$def with (url, photo)
 
 <body>
-	<div class="container">
-		<div class="row" >
+<div class="container">
+	<div class="row" >
+	
+		<div class="col-xs-6 col-md-4"  ></div>   <!-- 把页面分成三部分，取中间部分用于form -->
 		
-			 <div class="col-xs-6 col-md-4"  ></div>   <!-- 把页面分成三部分，取中间部分用于form -->
-			 
-			<div class="col-xs-6 col-md-4" 
-			         style="background-color: #dedef8;margin-top: 100px;padding-top: 10px;
-			         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-			
-				<form role="form" >
-					  <div class="form-group" >
-					        <label class="col-md-2 control-label">访问头像API</label>
-					        <label class="col-md-2 control-label">您可以通过下面方式访问头像</label>
-							<div class="col-md-6">
-							  import web <br />
-							  avatar_url = "{{ api_url }}/" <br />
-							  web.seeother(avatar_url)   <br />
-							</div>
-							<a href="$api_url"> <label class="col-md-2 control-label">单击这里查看访问效果</label></a>
-						</div>
-					
-				</form>
-			 </div>
+		<div class="col-xs-6 col-md-4" 
+		         style="background-color: #dedef8;margin-top: 100px;padding-top: 50px;
+		         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+		         
+			<table class = "table table-bordered" border=1>
+				<thead>
+					<tr><th>您可以通过(主机+用户名)方式访问头像，例如</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td> 
+								import web <br />
+								avatar_url = "$url" <br />
+								web.seeother(avatar_url)   <br />
+						</td> 
+					</tr>
+					<tr>
+						<td>
+							<p> 当前的URL是："$url" </p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="$photo" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
+</div>
+							
 </body>

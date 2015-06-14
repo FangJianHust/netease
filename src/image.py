@@ -43,11 +43,14 @@ class AccessHandler(base):
         super(AccessHandler, self).__init__()
     
     def GET(self, user):
+        #user = web.ctx.session.uname 
         image = db.get_photo(user)
         for (k, v) in web.ctx.iteritems():
             if k == 'host':
                 break; 
-        url = 'http://' + v + image
-        return render.about(url)
+        absolute_photo = 'http://' + v + image
+        url = 'http://' + v + '/about/' + user
+        return render.about(url, absolute_photo)    #通过在浏览器输入url，即可访问头像absolute_photo
+            
 
             
