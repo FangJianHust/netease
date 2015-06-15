@@ -13,7 +13,7 @@ upload_dir = curdir + relative_path   #绝对路径用于保存上传的头像
 
 db_path = curdir + '/db.json'     #数据库的配置文件
 
-debug = False
+debug = True
 
 # url规则
 urls = (
@@ -23,7 +23,7 @@ urls = (
     '/register', 'src.register.Register',
     '/information', 'src.information.Information',
     '/upload', 'src.image.Upload',
-    '/image/(.+)', 'src.image.AccessHandler',
+    '/portrait', 'src.image.AccessHandler',
 )
 
 render = web.template.render(curdir+'/templates/', base='base')
