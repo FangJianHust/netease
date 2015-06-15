@@ -54,13 +54,12 @@
 * setting.py中存放的是项目的配置文件，包括：上传头像存放的路径、是否是调试阶段、urls映射关系等。
 * avatar.py是项目的启动程序，apache把浏览器访问的根地址重定向到该文件，该文件再根据setting.py中的urls映射，对不同的请求调用相应的处理程序。
 * 所有的hander处理程序都在src文件夹中，其中：<br />
-    * base:基类，在构造函数中添加了session验证，所有需要权限验证的类都需要继承该类，包括information、about和upload
+    * base:基类，在构造函数中添加了session验证，所有需要权限验证的类都需要继承该类，包括information、AccessHandler和upload
     * register：注册，验证用户名和密码的长度、两次密码是否一致以及用户名是否存在
     * login：登录与退出，包含了session的添加与取消
     * db：数据库操作
     * information：显示头像等信息
-    * about：访问头像API的功能，即根据用户名查询头像
-    * upload：上传、修改用户头像
+    * image：访问头像API的功能，即根据用户名查询头像;上传、修改用户头像
 * 另外，data文件夹中存放的是session信息，static文件夹中存放的是js、css以，templates文件夹中存放的是html模板文件。
 
 ##工作流程
